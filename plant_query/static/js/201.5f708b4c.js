@@ -1,0 +1,2 @@
+"use strict";(self["webpackChunkplant"]=self["webpackChunkplant"]||[]).push([[201],{5201:function(t,n,e){e.r(n),e.d(n,{default:function(){return c}});var s=function(){var t=this,n=t._self._c;return n("div",{staticClass:"index"},[n("top"),n("router-link",{staticClass:"beggin_button",attrs:{to:"home"}},[t._v("快速进入")])],1)},u=[],a={name:"index"},l=a,i=e(1656),r=(0,i.A)(l,s,u,!1,null,"75014f72",null),c=r.exports}}]);
+//# sourceMappingURL=201.5f708b4c.js.map

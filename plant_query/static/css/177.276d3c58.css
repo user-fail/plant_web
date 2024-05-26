@@ -1,0 +1,1 @@
+.danmu_box{position:relative;background-color:#000;overflow:hidden}.danmu{position:absolute;line-height:30px;border-radius:10px;left:99%;white-space:pre;color:#fff;animation-name:moveLeft;animation-timing-function:linear;animation-duration:30s}@keyframes moveLeft{0%{left:100%}to{left:calc(-100% - 100vw)}}
