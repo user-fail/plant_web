@@ -1,4 +1,4 @@
-# 在Vercel中部署django
+# 在Vercel中部署django(入门教程)
 不包含Vercel注册,中文没看到好的部署教程
 ## 一 配置Vercel
 在新建manage.py下两个文件:
@@ -59,13 +59,22 @@ echo "BUILD END"
 1. wsgi.py
 2. setting.py
 
-wsgi.py 与wsgi通信的接口
-只需要将新建一个app变量赋值给application，前提是application = get_wsgi_application()
+wsgi.py 与wsgi通信的接口      
+只需要将新建一个app变量赋值给application，前提是application = get_wsgi_application(),具体过程可以看我的代码
+```angular2html
+app = application
+```
 
 setting.py     
-设置collectstatic收集的静态文件的路径   
+
 static= '/static/'
+
 staticfiles_dir = '静态文件目录,不要提供不存在在的目录会报错' # 具体可以看vercel的build log
-static_root = Base_DIR + "/staticfile/static"  # staticfile指的是vercel.json查找静态文件的的确切路径,static是你django static_url 开头的url
-，如何你配置过nginx这应该很好理解
+
+设置collectstatic收集的静态文件的路径
+
+static_root = BASE_DIR + "/staticfile/static"  # staticfile指的是vercel.json**查找**静态文件的的确切路径,static是你django static_url 开头的url
+，如何你配置过nginx这应该很好理解.  
+
+如果是vue打包的前端，在vue.config.js 配置 public:'/static/'。
 
