@@ -1,7 +1,7 @@
-# 在Vercel部署django
-不包含Vercel注册,中文没看到好的教程
+# 在Vercel中部署django
+不包含Vercel注册,中文没看到好的部署教程
 ## 一 配置Vercel
-新建两个文件:
+在新建manage.py下两个文件:
 1. vercel.json
 2. build_files.sh
 
@@ -39,14 +39,15 @@ vercel.json是用来配置环境的
 
 appname是python manage.py startapp appname    
 
-distDir是执行python manage.py collectstatic收集文件存放位置一定要配置不然找不到静态文件
+distDir是执行python manage.py collectstatic收集文件存放位置一定要配置,不然找不到静态文件。
+这里可以理解为nginx里面的静态文件目录。
 
 shname就是你的sh文件   
 
 build_files.sh
 ```angular2html
 echo "BUILD START"
-echo "vercel环境中不包含pip"
+echo "vercel的python环境中不包含pip"
 python3.9 -m ensurepip
 echo "安装pip"
 python3.9 -m pip install -r requirements.txt
@@ -54,7 +55,7 @@ echo "收集静态文件"
 python3.9 manage.py collectstatic --noinput --clear
 echo "BUILD END"
 ```
-## 配置django
+## 二配置django
 1. wsgi.py
 2. setting.py
 
@@ -63,4 +64,8 @@ wsgi.py 与wsgi通信的接口
 
 setting.py     
 设置collectstatic收集的静态文件的路径   
-static_root= 'staticfiles'
+static= '/static/'
+staticfiles_dir = '静态文件目录,不要提供不存在在的目录会报错' # 具体可以看vercel的build log
+static_root = Base_DIR + "/staticfile/static"  # staticfile指的是vercel.json查找静态文件的的确切路径,static是你django static_url 开头的url
+，如何你配置过nginx这应该很好理解
+
