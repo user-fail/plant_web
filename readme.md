@@ -1,5 +1,5 @@
 # 在Vercel中部署django(入门教程)
-不包含Vercel注册,中文没看到好的部署教程
+不包含Vercel注册,中文没看到好的部署教程，该项目是个软件工程的大作业。
 ## 一 配置Vercel
 在新建manage.py下两个文件:
 1. vercel.json
@@ -76,5 +76,8 @@ staticfiles_dir = '静态文件目录,不要提供不存在在的目录会报错
 static_root = BASE_DIR + "/staticfile/static"  # staticfile指的是vercel.json**查找**静态文件的的确切路径,static是你django static_url 开头的url
 ，如何你配置过nginx这应该很好理解.  
 
-如果是vue打包的前端，在vue.config.js 配置 public:'/static/'。
+如果是vue打包的前端，在vue.config.js 配置 public:'/static/'
 
+
+## 项目说明
+数据说明数据只是某个平台的数据,数据获取+Q:MzI4ODg5MjUwMA==
